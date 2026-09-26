@@ -1,8 +1,6 @@
 # Aspose.JMAP FOSS for Rust
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Crates.io](https://img.shields.io/crates/v/aspose-jmap-foss.svg)](https://crates.io/crates/aspose-jmap-foss) [![docs.rs](https://img.shields.io/docsrs/aspose-jmap-foss.svg)](https://docs.rs/aspose-jmap-foss) [![Contributors](https://img.shields.io/github/contributors/aspose-email-foss/Aspose.JMAP-FOSS-for-Rust.svg)](https://github.com/aspose-email-foss/Aspose.JMAP-FOSS-for-Rust/graphs/contributors)
-
-[![Aspose.JMAP FOSS for Rust](https://products.aspose.org/media/jmap/rust/banner-readme.png)](https://products.aspose.org/jmap/rust/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Contributors](https://img.shields.io/github/contributors/aspose-email-foss/Aspose.JMAP-FOSS-for-Rust.svg)](https://github.com/aspose-email-foss/Aspose.JMAP-FOSS-for-Rust/graphs/contributors)
 
 Aspose.JMAP FOSS for Rust is a free, open source JMAP client crate — for talking to a
 [JMAP](https://jmap.io) mail server over HTTP: [RFC 8620](https://www.rfc-editor.org/rfc/rfc8620)
@@ -184,16 +182,10 @@ for `send_request`. Errors surface as `JmapNetworkError` (transport) and `JmapPr
 JMAP method-level error); per-item `Set` failures are returned as data on the result rather than
 as an `Err`.
 
-The full protocol/API reference, rendered from the same specs that drive generation, is
-[`docs/api-reference.md`](../../docs/api-reference.md) at the repository root.
+The protocol/API reference is generated from the same specifications that drive this library.
 
 ## Documentation & Resources
 
-- **[Getting started guide](https://docs.aspose.org/jmap/rust/)** — installation and walkthroughs.
-- **[API reference](https://reference.aspose.org/jmap/rust/)** — browsable reference for the public types.
-- **[How-to guides & FAQ](https://kb.aspose.org/jmap/rust/)** — task-focused answers.
-- **[Protocol/API reference](../../docs/api-reference.md)** — the in-repo reference rendered from the specs.
-- **[Changelog](../../CHANGELOG.md)**, **[Contributing guide](../../CONTRIBUTING.md)**, **[Security policy](../../SECURITY.md)**.
 - Found a bug or have a feature request? [Open an issue](https://github.com/aspose-email-foss/Aspose.JMAP-FOSS-for-Rust/issues) on GitHub.
 
 ## Scope and Limitations
