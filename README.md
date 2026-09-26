@@ -199,7 +199,7 @@ The protocol/API reference is generated from the same specifications that drive 
     timezone-conversion bugs.
 - Unit tests run against a fake `Transport` with mocked responses — no live JMAP server is
   required. A Docker-based live-server integration suite (Stalwart Mail Server) lives in
-  [`infra/integration/`](../../infra/integration/README.md).
+  a separate Docker-based live-server suite used during release validation.
 
 ## Development and Testing
 
@@ -210,7 +210,7 @@ cargo build
 cargo test
 ```
 
-See [`infra/integration/README.md`](../../infra/integration/README.md) for the live-server suite.
+Live-server integration testing is maintained separately from this distribution repository.
 
 ## License
 
