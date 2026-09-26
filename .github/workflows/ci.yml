@@ -1,0 +1,42 @@
+﻿name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reject committed credentials
+        shell: bash
+        run: |
+          set -euo pipefail
+          for pattern in \
+            '-----BEGIN ([A-Z ]* )?PRIVATE KEY-----' \
+            'JMAP_AGENT_LLM_API_KEY[[:space:]]*=[[:space:]]*[^[:space:]#]' \
+            'sk-[A-Za-z0-9_-]{16,}' \
+            'gh[pousr]_[A-Za-z0-9_]{20,}' \
+            'github_pat_[A-Za-z0-9_]{20,}' \
+            'AKIA[0-9A-Z]{16}'; do
+            if git grep -nIE -- "$pattern"; then
+              echo "A credential-like value was committed. Remove it, rotate it, and retry."
+              exit 1
+            fi
+          done
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Test
+        shell: bash
+        run: |
+          cargo build
+          cargo test
+
